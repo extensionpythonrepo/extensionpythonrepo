@@ -1,0 +1,28 @@
+CREATE TABLE persons (id SERIAL,first_name VARCHAR(50),last_name VARCHAR(50),dob DATE,email VARCHAR(255),PRIMARY KEY (id));
+
+CREATE TABLE accountstest (
+	user_id serial,
+	username VARCHAR ( 50 ) NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+        last_login TIMESTAMP 
+);
+
+
+CREATE TABLE testthree (
+	us serial,
+	yu VARCHAR ( 50 ) NOT NULL,
+	tyy VARCHAR ( 50 ) NOT NULL
+);
+
+COPY testtwo(us,yu,tyy)
+FROM '/home/deepak/PycharmProjects/postgreedbconnection/tefile.csv'
+DELIMITER ','
+CSV HEADER;
+
+\l
+\c testdb
+\dt
+\conninfo
+
